@@ -1,7 +1,7 @@
 """
 Functionality for configuring a Tango DB from a dsconfig file
 """
-
+from __future__ import absolute_import
 from collections import defaultdict
 from functools import partial
 

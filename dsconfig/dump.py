@@ -8,6 +8,8 @@ $ python -m dsconfig.dump device:sys/tg_test/1 device:sys/tg_test/2
 
 """
 
+from __future__ import absolute_import
+from __future__ import print_function
 import tango
 
 from .appending_dict import SetterDict

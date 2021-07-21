@@ -2,6 +2,8 @@
 Routines for reading an Excel file containing server, class and device definitions,
 producing a file in the TangoDB JSON format.
 """
+from __future__ import absolute_import
+from __future__ import print_function
 
 import json
 import os

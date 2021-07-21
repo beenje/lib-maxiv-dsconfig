@@ -1,6 +1,9 @@
 import json
 
-from unittest.mock import MagicMock, patch
+try:
+    from unittest.mock import MagicMock, patch
+except ImportError:
+    from mock import MagicMock, patch
 from os.path import dirname, abspath, join
 
 from .test_tangodb import make_db

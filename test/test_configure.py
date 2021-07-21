@@ -1,5 +1,8 @@
 from copy import deepcopy
-from unittest.mock import Mock
+try:
+    from unittest.mock import Mock
+except ImportError:
+    from mock import Mock
 try:
     from unittest2 import TestCase
 except ImportError:

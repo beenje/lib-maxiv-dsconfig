@@ -2,7 +2,10 @@ import PyTango
 import pytest
 from dsconfig.tangodb import get_dict_from_db, get_servers_with_filters
 from dsconfig.utils import ObjectWrapper, find_device
-from unittest.mock import Mock, MagicMock, create_autospec
+try:
+    from unittest.mock import Mock, MagicMock, create_autospec
+except ImportError:
+    from mock import Mock, MagicMock, create_autospec
 
 
 def make_db(dbdata):

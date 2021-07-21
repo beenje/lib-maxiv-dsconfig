@@ -4,6 +4,8 @@ state of the Tango DB, and generates the set of DB API commands needed
 to get to the state described by the file. These commands can also
 optionally be run.
 """
+from __future__ import absolute_import
+from __future__ import print_function
 
 import json
 import sys

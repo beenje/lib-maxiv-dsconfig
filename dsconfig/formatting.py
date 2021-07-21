@@ -1,4 +1,6 @@
 "This module concerns the dsconfig JSON file format"
+from __future__ import absolute_import
+from __future__ import print_function
 
 import json
 import sys
