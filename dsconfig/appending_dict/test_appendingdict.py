@@ -153,14 +153,11 @@ class AppendingDictTestCase(unittest.TestCase):
         self.assertDictEqual(
             ad.to_dict(), {"a": {"b": ["3"], "c": {"d": ["4"]}, "e": ["1"]}})
 
-    def test_updating_does_not_work(self):
-        """
-        Have not yet implemented this
-        """
+    def test_updating(self):
         ad = AppendingDict()
         d = {"a": 1, "b": {"c": 3}}
-        with pytest.raises(NotImplementedError):
-            ad.update(d)
+        ad.update(d)
+        assert ad.to_dict() == {"a": ["1"], "b": {"c": ["3"]}}
 
     def test_set_string_value(self):
         ad = AppendingDict()
