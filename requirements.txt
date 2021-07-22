@@ -1,10 +1,9 @@
-unittest2
-pytest
-nose >= 1.0
-mock
-coverage
+jsonpatch>=1.13
 jsonschema
-jsonpatch
-PyTango
+six
+xlrd
+pytango
 pytest
-fake-factory
+pytest-cov
+Faker
+mock
