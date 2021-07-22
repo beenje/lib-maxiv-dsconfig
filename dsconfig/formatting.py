@@ -4,6 +4,7 @@ from __future__ import print_function
 
 import json
 import sys
+import six
 from copy import deepcopy, copy
 from os import path
 
@@ -23,7 +24,7 @@ SCHEMA_FILENAME = path.join(module_path, "schema/schema2.json")  # rename
 def decode_list(data):
     rv = []
     for item in data:
-        if isinstance(item, str):
+        if isinstance(item, six.text_type):
             item = str(item.encode('utf-8'))
         elif isinstance(item, list):
             item = decode_list(item)
@@ -36,9 +37,9 @@ def decode_list(data):
 def decode_dict(data):
     rv = {}
     for key, value in data.items():
-        if isinstance(key, str):
+        if isinstance(key, six.text_type):
             key = str(key.encode('utf-8'))
-        if isinstance(value, str):
+        if isinstance(value, six.text_type):
             value = str(value.encode('utf-8'))
         elif isinstance(value, list):
             value = decode_list(value)

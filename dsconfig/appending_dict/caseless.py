@@ -2,6 +2,7 @@
 A caseless dictionary implementation.
 """
 
+import six
 from collections import MutableMapping
 
 
@@ -46,7 +47,7 @@ class CaselessDictionary(MutableMapping):
         self.__dict__["_dict"] = {}
         temp_dict = dict(*args, **kwargs)
         for key, value in list(temp_dict.items()):
-            if isinstance(key, str):
+            if isinstance(key, six.string_types):
                 key = CaselessString.make_caseless(key)
             self._dict[key] = value
 
@@ -92,7 +93,7 @@ class CaselessString(object):
 
     @classmethod
     def make_caseless(cls, string):
-        if isinstance(string, str):
+        if isinstance(string, six.text_type):
             return CaselessUnicode(string)
         return CaselessStr(string)
 
@@ -101,5 +102,5 @@ class CaselessStr(CaselessString, str):
     pass
 
 
-class CaselessUnicode(CaselessString, str):
+class CaselessUnicode(CaselessString, six.text_type):
     pass

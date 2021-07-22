@@ -9,9 +9,9 @@ setup(
     packages=["dsconfig", "dsconfig.appending_dict"],
     description="Library and utilities for Tango device configuration.",
     # Requirements
-    python_requires='~=3.6',
+    python_requires='>=2.7',
     setup_requires=["setuptools", "pytest-runner"],
-    install_requires=["jsonpatch>=1.13", "jsonschema", "xlrd", "pytango"],
+    install_requires=["jsonpatch>=1.13", "jsonschema", "six", "xlrd", "pytango"],
     tests_require=["pytest", "pytest-cov", "Faker", "mock"],
     # Resources
     package_data={
