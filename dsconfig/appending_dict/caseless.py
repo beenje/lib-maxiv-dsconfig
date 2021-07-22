@@ -3,7 +3,7 @@ A caseless dictionary implementation.
 """
 
 import six
-from collections import MutableMapping
+from six.moves.collections_abc import MutableMapping
 
 
 class CaselessDictionary(MutableMapping):

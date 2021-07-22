@@ -1,5 +1,6 @@
 from __future__ import absolute_import
-from collections import defaultdict, Mapping
+from collections import defaultdict
+from six.moves.collections_abc import Mapping
 
 from .caseless import CaselessDictionary
 

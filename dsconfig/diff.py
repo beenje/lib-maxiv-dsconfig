@@ -2,7 +2,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 import json
 import sys
-from collections import Mapping
+from six.moves.collections_abc import Mapping
 
 from .utils import green, yellow, red
 
