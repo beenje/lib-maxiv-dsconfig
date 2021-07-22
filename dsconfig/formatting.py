@@ -19,7 +19,7 @@ module_path = path.dirname(path.realpath(__file__))
 SCHEMA_FILENAME = path.join(module_path, "schema/schema2.json")  # rename
 
 
-# functions to decode unicode JSON (PyTango does not like unicode strings)
+# functions to decode unicode JSON (pytango does not like unicode strings)
 
 def decode_list(data):
     rv = []

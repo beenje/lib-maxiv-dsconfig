@@ -10,7 +10,7 @@ from copy import deepcopy
 from random import choice, randint
 
 from faker import Faker
-import PyTango
+import tango
 
 from dsconfig.configure import configure
 from .providers import TangoProvider
@@ -348,7 +348,7 @@ def test_add_device_to_existing_class():
     assert len(calls) == 1
     method, [info], kwargs = calls[0]
     assert method == "add_device"
-    assert type(info) == PyTango.DbDevInfo
+    assert type(info) == tango.DbDevInfo
     assert info.server == "%s/%s" % (srv, inst)
     assert info.klass == cls
     assert info.name == devname
@@ -368,7 +368,7 @@ def test_add_device_to_existing_instance():
     assert len(calls) == 1
     method, [info], kwargs = calls[0]
     assert method == "add_device"
-    assert type(info) == PyTango.DbDevInfo
+    assert type(info) == tango.DbDevInfo
     assert info.server == "%s/%s" % (srv, inst)
     assert info.klass == classname
     assert info.name == devname
@@ -389,7 +389,7 @@ def test_add_device_to_existing_server():
     assert len(calls) == 1
     method, [info], kwargs = calls[0]
     assert method == "add_device"
-    assert type(info) == PyTango.DbDevInfo
+    assert type(info) == tango.DbDevInfo
     assert info.server == "%s/%s" % (srv, instname)
     assert info.klass == classname
     assert info.name == devname
@@ -428,7 +428,7 @@ def test_add_server():
     assert len(calls) == 1
     method, [info], kwargs = calls[0]
     assert method == "add_device"
-    assert type(info) == PyTango.DbDevInfo
+    assert type(info) == tango.DbDevInfo
     assert info.server == "test_server/test_instance"
     assert info.klass == "test_class"
     assert info.name == "my/test/device"

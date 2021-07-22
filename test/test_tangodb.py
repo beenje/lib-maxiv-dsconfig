@@ -1,4 +1,4 @@
-import PyTango
+import tango
 import pytest
 from dsconfig.tangodb import get_dict_from_db, get_servers_with_filters
 from dsconfig.utils import ObjectWrapper, find_device
@@ -9,7 +9,7 @@ except ImportError:
 
 
 def make_db(dbdata):
-    db = create_autospec(PyTango.Database)
+    db = create_autospec(tango.Database)
 
     def get_device_info(dev):
         _, (srv, inst, clss, _) = find_device(dbdata, dev)
@@ -60,7 +60,7 @@ def test_get_dict_from_db():
 
 
 def test_get_props_with_mixed_case():
-    db = create_autospec(PyTango.Database)
+    db = create_autospec(tango.Database)
     query_results = [
         (None, [
             "a/b/c", "prop1", "prop1 line 1",
