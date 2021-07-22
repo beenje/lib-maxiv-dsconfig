@@ -1,0 +1,7 @@
+{
+  "name": "dsconfig",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".",
+  },
+}
