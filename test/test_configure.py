@@ -7,6 +7,7 @@ try:
     from unittest2 import TestCase
 except ImportError:
     from unittest import TestCase
+import pytest
 
 from dsconfig.configure import (update_server, update_device_or_class,
                                 update_properties)
@@ -378,7 +379,7 @@ class ConfigureTestCase(TestCase):
         dev["attribute_properties"]["ampliz"].update({"fish": [label]})
 
         orig_dev = find_device(self.dbdict, devname)[0]
-        with self.assertRaises(KeyError):
+        with pytest.raises(KeyError):
             update_properties(self.db, devname,
                               orig_dev["attribute_properties"],
                               dev["attribute_properties"],

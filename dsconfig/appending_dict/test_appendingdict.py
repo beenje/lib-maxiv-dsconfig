@@ -3,6 +3,7 @@ try:
     import unittest2 as unittest
 except:
     import unittest
+import pytest
 
 from . import SetterDict, AppendingDict, merge
 
@@ -141,10 +142,8 @@ class AppendingDictTestCase(unittest.TestCase):
         ad = AppendingDict()
         ad.a.b.c = 1
 
-        def set_subtree():
+        with pytest.raises(ValueError):
             ad.a = 2
-
-        self.assertRaises(ValueError, set_subtree)
 
     def test_setting_with_appendingdict(self):
         ad = AppendingDict()
@@ -160,7 +159,8 @@ class AppendingDictTestCase(unittest.TestCase):
         """
         ad = AppendingDict()
         d = {"a": 1, "b": {"c": 3}}
-        self.assertRaises(NotImplementedError, ad.update(d))
+        with pytest.raises(NotImplementedError):
+            ad.update(d)
 
     def test_set_string_value(self):
         ad = AppendingDict()

@@ -56,5 +56,5 @@ def test_caseless_dict():
 class TestImmutableDict(unittest.TestCase):
     def test_immutable(self):
         test_dict = ImmutableDict({'key1': 'value1'})
-        with self.assertRaises(TypeError):
+        with pytest.raises(TypeError):
             test_dict['key2'] = 'value2'
